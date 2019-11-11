@@ -158,7 +158,7 @@ def clean_braille_spaces(braille_string):
 	'''
 	out_str = ""
 	for cur_char in braille_string:
-		if cur_char == "⠀":
+		if cur_char == "⠀": #empty braille
 			out_str += " "
 		else:
 			out_str += cur_char
