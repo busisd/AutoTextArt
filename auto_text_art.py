@@ -148,46 +148,55 @@ def invert_braille_string(braille_string):
 	
 	return out_str
 
-def clean_braille_spaces(braille_string):
+def clean_braille_spaces(braille_string, blank_char = " "):
 	'''
 		Given a string of braille and non-braille characters,
 		replaces all instance of the "empty" braille character
-		with a space. (Text editors display the empty braille
-		symbol as thinner than other braille characters, while
-		a space is the same as other braille symbols).
+		with the given character. (Text editors may display the empty 
+		braille symbol as thinner than other braille characters, so it 
+		may be preferable to replace is with a sparse braille character
+		or a space).
+		
+		Optional argument: blank_char, the char to replace blanks with.
+		Defaults to a space.
 	'''
 	out_str = ""
 	for cur_char in braille_string:
 		if cur_char == "⠀": #empty braille
-			out_str += " "
+			out_str += blank_char
 		else:
 			out_str += cur_char
 		
 	return out_str
 	
-def main():
-	# print(ord('⣿'))
-	# print(ord('⠀')) #blank braille symbol
+def make_art(filename, blank_char = " "):
+	'''
+		Given a filename, converts it to a braille text-art.
+		
+		Replaces blanks in the output with the given 
+		blank_char, defaults to space.
+	'''
 	
-	
-	# with open("test_input_2.txt", 'r') as in_file:
-		# input_text = in_file.read()
-	
-	# with open("output.txt", 'w') as out_file:
-		# out_file.write(invert_braille_string(input_text))
-	
-	if (len(sys.argv) < 2):
-		print("Input filename you want to convert")
-		return
-	
-	filename = sys.argv[1]
 	img_in = Image.open(filename)
 	with open("output_"+filename.split(".")[0]+".txt", 'w') as out_file:
 		out_str = img_to_braille(img_in)
-		out_file.write(clean_braille_spaces(out_str))
+		out_file.write(clean_braille_spaces(out_str, blank_char))
 		out_file.write("\r\n")
-		out_file.write(clean_braille_spaces(invert_braille_string(out_str)))
+		out_file.write(clean_braille_spaces(invert_braille_string(out_str), blank_char))
 	img_in.close()
+
+
+def main():	
+	if (len(sys.argv) < 2):
+		print("Proper usage: python3 auto_text_art.py filename [blank_char]")
+		return
+	filename = sys.argv[1]
+	
+	blank_char = " "
+	if ((len(sys.argv)) > 2):
+		blank_char = sys.argv[2]
+		
+	make_art(filename, blank_char)
 
 if __name__=="__main__":
 	main()
