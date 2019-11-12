@@ -42,6 +42,7 @@ and, given the crab.jpg file included in this repository, outputs:
 ⣷⣿⣇⢀⣼⡿⢀⢸⣿⢀⠘⠿⣿⣿⣿⣿⠿⠇⢀⣾⣧⢀⢹⣷⢀⢸⣿⣾⣿
 ⣿⣿⣿⣄⣿⣇⢀⢾⣿⣦⡀⢀⢘⣿⣿⡇⢀⢀⣰⣿⡿⢀⣸⣿⣠⣿⣿⣿⣿
 ⣿⣿⣿⣿⣿⣿⣿⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣿⣿⣿⣿⣿⣿⣿⣿
-⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿```
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+```
 
 The output looks better with monospaced fonts.
