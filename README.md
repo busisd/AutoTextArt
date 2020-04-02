@@ -9,7 +9,10 @@ For example, the program could be run with the following command:
 
 python3 auto_text_art.py crab.jpg ⢀
 
-and, given the crab.jpg file included in this repository, outputs:
+where crab.jpg is:
+![crab.jpg](https://raw.githubusercontent.com/busisd/AutoTextArt/master/crab.jpg)
+
+and outputs:
 
 ```
 ⢀⢀⢀⢀⢀⢀⢀⢀⢀⢀⢀⢀⢀⢀⢀⢀⢀⢀⢀⢀⢀⢀⢀⢀⢀⢀⢀⢀⢀
